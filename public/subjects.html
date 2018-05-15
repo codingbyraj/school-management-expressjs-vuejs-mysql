@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subjects</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">School Management</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="courses.html">Course</a>
+                    </li>
+                    <li>
+                        <a href="students.html">Student</a>
+                    </li>
+                    <li>
+                        <a href="subjects.html">Subject</a>
+                    </li>
+                    <li>
+                        <a href="teachers.html">Teacher</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="content">
+        <div class="container">
+            <div id="div_subject" class="form-group">
+                <h3>See all Subjects</h3>
+                <button class="btn bg-primary" v-on:click="getAllSubjects()">All Subjects</button>
+                <ul>
+                    <li v-for="subject in subjects">
+                        {{subject.name}}
+                    </li>
+                </ul>
+                <hr>
+                <h3>Add Subject</h3>
+                <label>Name</label>
+                <input class="form-control" type="text" v-model=subjectName placeholder="Enter Subject ">
+                <br>
+                <button class="btn bg-primary" v-on:click="addNewSubject()">Add Subject</button>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>All Right Reserved. &copy; Copyright 2018</p>
+        </div>
+    </footer>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.min.js"></script>
+    <script src="./controller/subject.js"></script>
+</body>
+
+</html>

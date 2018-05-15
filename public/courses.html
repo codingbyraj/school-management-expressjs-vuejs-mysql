@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">School Management</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="courses.html">Course</a>
+                    </li>
+                    <li>
+                        <a href="students.html">Student</a>
+                    </li>
+                    <li>
+                        <a href="subjects.html">Subject</a>
+                    </li>
+                    <li>
+                        <a href="teachers.html">Teacher</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="content">
+        <div class="container">
+            <div id="div_course" class="form-group">
+                <h3>See all courses</h3>
+                <ul>
+                    <li v-for="course in coursearr">
+                        {{course.name}}
+                    </li>
+                </ul>
+                <button class="btn btn-primary" v-on:click="getAllCourses()">All Courses</button>
+                <hr>
+                <h3>Enter new course</h3>
+                <label>Name</label>
+                <input class="form-control" type="text" v-model="CourseName" placeholder="Enter name">
+                <br>
+                <button class="btn btn-primary" v-on:click="addnewCourse()">Add Course</button>
+                <hr>
+                <h3>Get batches by course</h3>
+                <input class="form-control" type="text" placeholder="Enter Course Id" v-model="courseId" autofocus="autofocus">
+                <br>
+                <button class="btn btn-primary" v-on:click="getBatchesByCourse()">Get Batches</button>
+                <ul>
+                    <li v-for="batch in batches">
+                        {{batch.id}} {{batch.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>All Right Reserved. &copy; Copyright 2018</p>
+        </div>
+    </footer>
+</body>
+<script src="./lib/vue.js"></script>
+<script src="./lib/axios.min.js"></script>
+<script src="./controller/course.js"></script>
+
+</html>

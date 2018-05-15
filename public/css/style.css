@@ -1,0 +1,51 @@
+nav {
+    background: #696D7D !important;
+    border: 1px solid #696D7D !important;    
+}
+
+nav a{
+    color: white !important;
+}
+li.active a{
+    background-color: #5a5f74 !important;    
+}
+
+#content{
+    padding-bottom: 10%; 
+}
+#main-page {
+    padding-bottom: 13%;
+}
+
+.main-head {
+    text-align: center;
+}
+
+.main-head {
+    text-align: center;
+}
+
+.upcoming_baches tr {
+    border: 2px solid;
+}
+
+.upcoming_baches td,
+.upcoming_baches th {
+    border: 2px solid;
+    padding: 3px;
+}
+
+footer {
+    background: #0E3B43;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 16px;
+}

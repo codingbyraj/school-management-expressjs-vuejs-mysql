@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">School Management</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="courses.html">Course</a>
+                    </li>
+                    <li>
+                        <a href="students.html">Student</a>
+                    </li>
+                    <li>
+                        <a href="subjects.html">Subject</a>
+                    </li>
+                    <li>
+                        <a href="teachers.html">Teacher</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="content">
+        <div class="container">
+            <div id="div_students" class="form-group">
+                <h3>See all students</h3>
+                <button class="btn btn-primary" v-on:click="getAllStudents()">All Students</button>
+                <ul>
+                    <li v-for="student in students">
+                        {{student.name}}
+                    </li>
+                </ul>
+                <hr>
+                <h3>Add a student</h3>
+                <div class="add-student">
+                    <label>Name</label>
+                    <input class="form-control" type="text" v-model="studentName" placeholder="Enter name">
+                    <label>Email</label>
+                    <input class="form-control" type="text" v-model="studentEmail" placeholder="Enter email">
+                    <label>Mobile</label>
+                    <input class="form-control" type="text" v-model="studentMobile" placeholder="Enter mobile">
+                    <br>
+                    <button class="btn btn-primary" v-on:click="addnewStudent()">Add Student</button>
+                </div>
+            </div>
+            <hr>
+            <div class="get-student">
+                <input class="form-control" type="text" v-model="studentId" placeholder="Enter student id">
+                <br>
+                <button class="btn btn-primary" v-on:click="getStudentById()">Get Student By ID</button>
+                <p>{{studentDetail.name}}</p>
+            </div>
+            <hr>
+            <div class="get-batches">                
+                <input class="form-control" type="text" v-model="studId" placeholder="Enter student id">
+                <br>
+                <button class="btn btn-primary" v-on:click="getBatchesOfStudent(studId)">Get Batches By ID</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>All Right Reserved. &copy; Copyright 2018</p>
+        </div>
+    </footer>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.min.js"></script>
+    <script src="./controller/student.js"></script>
+</body>
+
+</html>
