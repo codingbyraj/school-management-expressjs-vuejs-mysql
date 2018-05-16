@@ -30,7 +30,7 @@ let app = new Vue({
                         app.getAllCourses();
                 })
                 .catch((err) => {
-                    console.log(err.response)
+                    console.log(err.res)
                 })
         },
         // get batches by course
@@ -44,7 +44,7 @@ let app = new Vue({
                 app.batches = res.data.batches;
             })
             .catch((error)=>{
-                console.log("Error", error.response)
+                console.log("Error", error.res)
             })
         }
     }
