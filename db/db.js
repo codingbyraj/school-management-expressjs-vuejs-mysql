@@ -2,7 +2,8 @@ const Sequelize=require('sequelize');
 
 const db= new Sequelize('learningsystem','root','root',{
     host:'localhost',
-    dialect:'mysql'
+    dialect:'sqlite',
+    storage: './schoolsystem.db'
 });
 
 const Course=db.define('courses',{
